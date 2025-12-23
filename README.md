@@ -3,7 +3,7 @@
 **SmartRetail AI** is an intelligent, multi-tenant retail management system that enables voice-based billing, automated inventory updates, and AI-powered business insights for local Indian shopkeepers. Designed to eliminate manual errors, speed up billing, and empower small retailers with data-driven decision making.
 
 [![Demo on LinkedIn](https://img.shields.io/badge/Demo-LinkedIn-blue?logo=linkedin)](https://www.linkedin.com/posts/ravuri-greeshmanth-66a6b7327_retailtech-problemsolving-ai-activity-7362710809749123072-uLuy?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFKB5fIBWyje4EDRl-mq4CYsZfLNhAvESgU)
-[![Live App](https://smartretail-ai-app.web.app)
+Live App:https://smartretail-ai-app.web.app
 
 ---
 
@@ -12,15 +12,16 @@ Traditional Indian retail stores run on manual registers and guesswork, leading 
 * **Slow & error-prone billing**.
 * **No visibility into real-time inventory**.
 * **No data insights for improving sales/profit**.
+* **No proper Guidance to overcome real-world competition**.
 * **Complex digital tools that small shops cannot adopt**.
 
 ## 💡 Solution Overview
 SmartRetail AI provides a simple, intuitive interface to manage all core retail workflows while using AI as the backend engine:
 * 🎙 **Voice-Based Billing** using Whisper API.
-* 🤖 **AI Business Insights** using GPT-4.
+* 🤖 **AI Business Insights,AI assistance to clarify real-world queries** using GPT-4.
 * 📦 **Automated Inventory Tracking**.
 * 📊 **Real-time charts, metrics, and reminders**.
-* 🔄 **Serverless architecture** (no manual backend infrastructure required).
+* 🔄 **Easy to Use**it can be accessed through mobile**.
 
 ---
 
