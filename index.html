@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Login - SmartRetail AI</title>
+</head>
+
+<body id="page-login">
+
+    <main class="login-container">
+
+        <section class="login-form">
+
+            <form id="login-form">
+                <div class="input-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your 10-digit phone number" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="pin">4-Digit PIN</label>
+                    <input type="password" id="pin" name="pin" placeholder="****" maxlength="4" required>
+                </div>
+
+                <button type="submit" class="btn">Login</button>
+                <button type="button" class="btn secondary" id="signup-btn">Sign Up</button>
+            </form>
+
+       
+            <div id="signup-box" class="hidden">
+                <h2>Create Account</h2>
+
+                <div class="input-group">
+                    <label for="signup-phone">Phone Number</label>
+                    <input type="tel" id="signup-phone" placeholder="Enter 10-digit number">
+                </div>
+
+                <div class="input-group">
+                    <label for="signup-pin">4-Digit PIN</label>
+                    <input type="password" id="signup-pin" maxlength="4" placeholder="****">
+                </div>
+
+                <button class="btn" id="create-account-btn">Create Account</button>
+                <button class="btn secondary" id="cancel-signup-btn">Cancel</button>
+            </div>
+
+        </section>
+    </main>
+
+
+    <script type="module" src="js/app.js?v=4"></script>
+</body>
+
+</html>

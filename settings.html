@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Settings - SmartRetail AI</title>
+</head>
+
+<body id="page-settings">
+
+    <div class="app-layout">
+        <!-- Main Header -->
+        <header class="app-header">
+            <div class="header-left">
+                <h1>Settings</h1>
+            </div>
+            <div class="header-right">
+                <div class="user-profile">
+                    <span>Shopkeeper</span>
+                    <div class="avatar">S</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Sidebar Navigation -->
+        <aside class="app-sidebar">
+            <div class="sidebar-header">
+                <h2>SmartRetail AI</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="ai-assistant.html">Genie</a></li>
+                    <li><a href="billing.html">Billing</a></li>
+                    <li><a href="inventory.html">Inventory</a></li>
+                    <li><a href="customers.html">Customers</a></li>
+                    <li><a href="reports.html">Reports</a></li>
+                    <li class="active"><a href="settings.html">Settings</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="#" id="logout-btn">Logout</a>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="app-main-content">
+            <div class="settings-layout">
+                <!-- Profile Settings -->
+                <div class="card settings-card">
+                    <h3>Profile & Shop Details</h3>
+                    <form id="settings-form">
+                        <div class="input-group">
+                            <label for="shopkeeper-name">Your Name</label>
+                            <input type="text" id="shopkeeper-name-input" placeholder="Enter your name">
+                        </div>
+                        <div class="input-group">
+                            <label for="shop-name">Shop Name</label>
+                            <input type="text" id="shop-name-input" placeholder="Enter your shop's name">
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="login-phone">Login Phone Number (Username)</label>
+                            <input type="tel" id="login-phone-input" placeholder="Enter 10-digit number" required>
+                        </div>
+                         <div class="input-group">
+                            <label for="login-pin">Login 4-Digit PIN (Password)</label>
+                            <input type="password" id="login-pin-input" placeholder="Set your 4-digit PIN" maxlength="4" required>
+                        </div>
+
+                        <button type="submit" class="btn">Save Changes</button>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script type="module" src="js/app.js?v=4"></script>
+</body>
+
+</html>

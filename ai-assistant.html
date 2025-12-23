@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Genie - SmartRetail AI</title>
+    <style>
+        .ai-assistant-layout {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            grid-template-rows: auto 1fr;
+            grid-template-areas:
+                "header header"
+                "main sidebar";
+            gap: 24px;
+            height: 100%;
+        }
+
+        .ai-main-content {
+            grid-area: main;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .ai-sidebar {
+            grid-area: sidebar;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .ai-card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+        }
+        
+        .ai-card h4 {
+            font-size: 18px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .insights-feed {
+            height: 200px;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+
+        .insight-message {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .insight-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            background-color: #e8f0fe;
+            color: #1a73e8;
+        }
+        
+        .insight-icon.alert-icon {
+             background-color: #fce8e6;
+             color: #d93025;
+        }
+
+        .insight-content h5 {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .insight-content p {
+            font-size: 15px;
+            line-height: 1.5;
+            color: #5f6368;
+        }
+        
+        #genie-spinner {
+            display: none;
+            margin: 20px auto;
+            width: 40px;
+            height: 40px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #1a73e8;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        /* New Chatbox Styles */
+        .chat-container {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .chat-messages {
+            flex-grow: 1;
+            overflow-y: auto;
+            padding: 10px;
+            border-bottom: 1px solid #dfe1e5;
+            margin-bottom: 10px;
+        }
+        .chat-input-area {
+            display: flex;
+            gap: 10px;
+        }
+        .chat-input-area input {
+            flex-grow: 1;
+            padding: 12px;
+            border: 1px solid #dfe1e5;
+            border-radius: 8px;
+        }
+        .chat-message {
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+        }
+        .chat-message.user {
+            align-items: flex-end;
+        }
+        .chat-message.genie {
+            align-items: flex-start;
+        }
+        .chat-bubble {
+            max-width: 80%;
+            padding: 10px 15px;
+            border-radius: 18px;
+            line-height: 1.5;
+        }
+        .chat-bubble.user {
+            background-color: #1a73e8;
+            color: #fff;
+            border-bottom-right-radius: 4px;
+        }
+        .chat-bubble.genie {
+            background-color: #f1f3f4;
+            color: #202124;
+            border-bottom-left-radius: 4px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+    </style>
+</head>
+
+<body id="page-genie">
+
+    <div class="app-layout">
+        <header class="app-header">
+            <div class="header-left">
+                <h1>Genie</h1>
+            </div>
+            <div class="header-right">
+                <div class="user-profile">
+                    <span id="shopkeeper-name">Shopkeeper</span>
+                    <div class="avatar">S</div>
+                </div>
+            </div>
+        </header>
+
+        <aside class="app-sidebar">
+            <div class="sidebar-header">
+                <h2>SmartRetail AI</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li class="active"><a href="ai-assistant.html">Genie</a></li>
+                    <li><a href="billing.html">Billing</a></li>
+                    <li><a href="inventory.html">Inventory</a></li>
+                    <li><a href="customers.html">Customers</a></li>
+                    <li><a href="reports.html">Reports</a></li>
+                    <li><a href="settings.html">Settings</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="index.html">Logout</a>
+            </div>
+        </aside>
+
+        <main class="app-main-content">
+            <div class="ai-assistant-layout">
+                <div class="ai-main-content">
+                    <div class="ai-card">
+                        <h4>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"></path><path d="m19 9-5 5-4-4-3 3"></path></svg>
+                            Genie's Analysis: Stock Value vs. Sales Performance
+                        </h4>
+                        <div class="chart-container" style="height: 250px;">
+                            <canvas id="aiChart"></canvas>
+                        </div>
+                    </div>
+                    <!-- Chatbox Card -->
+                    <div class="ai-card chat-container">
+                         <h4>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                            Chat with Genie
+                        </h4>
+                        <div class="chat-messages" id="chat-messages">
+                             <!-- Chat messages will be populated here -->
+                        </div>
+                        <form class="chat-input-area" id="chat-form">
+                            <input type="text" id="chat-input" placeholder="Ask about your business..." required>
+                            <button type="submit" class="btn btn-send">Send</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="ai-sidebar">
+                    <div class="ai-card">
+                        <h4>
+                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+                            Key Reminders
+                        </h4>
+                        <div id="reminders-feed" class="insights-feed">
+                        </div>
+                    </div>
+                    <div class="ai-card">
+                        <h4>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Z"></path><path d="m15.5 8.5-3 3-3-3"></path></svg>
+                            Genie's Insights
+                        </h4>
+                        <div class="insights-feed" id="suggestions-feed">
+                        </div>
+                        <div id="genie-spinner"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script type="module" src="js/app.js?v=5"></script>
+</body>
+
+</html>

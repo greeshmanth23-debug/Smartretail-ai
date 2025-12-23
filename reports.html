@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Reports - SmartRetail AI</title>
+</head>
+
+<body id="page-reports">
+
+    <div class="app-layout">
+        <!-- Main Header -->
+        <header class="app-header">
+            <div class="header-left">
+                <h1>Reports</h1>
+            </div>
+            <div class="header-right">
+                <div class="user-profile">
+                    <span>Shopkeeper</span>
+                    <div class="avatar">S</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Sidebar Navigation -->
+        <aside class="app-sidebar">
+            <div class="sidebar-header">
+                <h2>SmartRetail AI</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="ai-assistant.html">Genie</a></li>
+                    <li><a href="billing.html">Billing</a></li>
+                    <li><a href="inventory.html">Inventory</a></li>
+                    <li><a href="customers.html">Customers</a></li>
+                    <li class="active"><a href="reports.html">Reports</a></li>
+                    <li><a href="settings.html">Settings</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="index.html">Logout</a>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="app-main-content">
+            <!-- Page Header with Actions -->
+            <div class="page-header">
+                <h3>Business Analytics</h3>
+                <div class="date-range-picker">
+                    <input type="date" value="2025-07-01">
+                    <span>to</span>
+                    <input type="date" value="2025-07-21">
+                </div>
+            </div>
+
+            <div class="dashboard-grid-visuals" id="reports-hub">
+                <!-- Sales Report Card -->
+                <div class="card">
+                    <h3>Sales Report</h3>
+                    <p class="card-footer">Detailed breakdown of sales, taxes, and discounts.</p>
+                    <a href="sales-report.html" class="btn-secondary" style="margin-top: 20px; text-decoration: none;">View Report</a>
+                </div>
+
+                <!-- Product Report Card -->
+                <div class="card">
+                    <h3>Product Report</h3>
+                    <p class="card-footer">See your best-selling items and category performance.</p>
+                    <a href="product-report.html" class="btn-secondary" style="margin-top: 20px; text-decoration: none;">View Report</a>
+                </div>
+
+                <!-- Inventory Report Card -->
+                <div class="card">
+                    <h3>Inventory Report</h3>
+                    <p class="card-footer">Track stock levels, value, and potential waste.</p>
+                    <a href="inventory-report.html" class="btn-secondary" style="margin-top: 20px; text-decoration: none;">View Report</a>
+                </div>
+                
+                <!-- Profit & Loss Report Card -->
+                <div class="card">
+                    <h3>Profit & Loss</h3>
+                    <p class="card-footer">Understand your business's profitability over time.</p>
+                    <a href="profit-loss-report.html" class="btn-secondary" style="margin-top: 20px; text-decoration: none;">View Report</a>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script type="module" src="js/app.js?v=4"></script>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+    <title>Inventory Report - SmartRetail AI</title>
+</head>
+
+<body id="page-inventory-report">
+
+    <div class="app-layout">
+        <!-- Main Header -->
+        <header class="app-header">
+            <div class="header-left">
+                <h1>Inventory Report</h1>
+            </div>
+            <div class="header-right">
+                <div class="user-profile">
+                    <span>Shopkeeper Name</span>
+                    <div class="avatar">S</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Sidebar Navigation -->
+        <aside class="app-sidebar">
+            <div class="sidebar-header">
+                <h2>SmartRetail AI</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="billing.html">Billing</a></li>
+                    <li><a href="inventory.html">Inventory</a></li>
+                    <li><a href="customers.html">Customers</a></li>
+                    <li class="active"><a href="reports.html">Reports</a></li>
+                    <li><a href="settings.html">Settings</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="index.html">Logout</a>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="app-main-content">
+            <!-- Page Header with Actions -->
+            <div class="page-header">
+                <h3>Current Stock & Value</h3>
+                <button class="btn">Export PDF</button>
+            </div>
+
+            <!-- Inventory Report Table -->
+            <div class="table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Product Name</th>
+                            <th>Category</th>
+                            <th>Stock Quantity</th>
+                            <th>Purchase Price</th>
+                            <th>Total Stock Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Inventory report data will be populated here by JavaScript -->
+                    </tbody>
+                    <tfoot>
+                        <!-- The grand total will be calculated and displayed here -->
+                        <tr>
+                            <td colspan="4"><strong>Grand Total Value</strong></td>
+                            <td id="inventory-grand-total"><strong>₹ 0.00</strong></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <script type="module" src="js/app.js?v=4"></script>
+</body>
+
+</html>

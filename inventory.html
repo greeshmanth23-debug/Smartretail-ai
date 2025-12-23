@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Inventory - SmartRetail AI</title>
+</head>
+
+<body id="page-inventory">
+
+    <div class="app-layout">
+        <!-- Main Header -->
+        <header class="app-header">
+            <div class="header-left">
+                <h1>Inventory</h1>
+            </div>
+            <div class="header-right">
+                <div class="user-profile">
+                    <span>Shopkeeper</span>
+                    <div class="avatar">S</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Sidebar Navigation -->
+        <aside class="app-sidebar">
+            <div class="sidebar-header">
+                <h2>SmartRetail AI</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="ai-assistant.html">Genie</a></li>
+                    <li><a href="billing.html">Billing</a></li>
+                    <li class="active"><a href="inventory.html">Inventory</a></li>
+                    <li><a href="customers.html">Customers</a></li>
+                    <li><a href="reports.html">Reports</a></li>
+                    <li><a href="settings.html">Settings</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="index.html">Logout</a>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="app-main-content">
+            <!-- Page Header with Actions -->
+            <div class="page-header">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search products...">
+                </div>
+                <button class="btn" id="add-item-btn">Add New Item</button>
+            </div>
+
+            <!-- Inventory Table -->
+            <div class="table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Item Name</th>
+                            <th>Category</th>
+                            <th>Stock Quantity</th>
+                            <th>Purchase Price</th>
+                            <th>Selling Price</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <!-- Add New Item Modal -->
+    <div class="modal-overlay hidden" id="add-item-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Add New Item</h3>
+                <button class="close-btn" id="close-modal-btn">&times;</button>
+            </div>
+            <form id="add-item-form">
+                <div class="input-group">
+                    <label for="item-name">Item Name</label>
+                    <input type="text" id="item-name" required>
+                </div>
+                <div class="input-group">
+                    <label for="item-category">Category</label>
+                    <input type="text" id="item-category">
+                </div>
+                <div class="input-group">
+                    <label for="stock-quantity">Stock Quantity</label>
+                    <input type="number" id="stock-quantity" required>
+                </div>
+                <div class="input-group">
+                    <label for="purchase-price">Purchase Price (₹)</label>
+                    <input type="number" id="purchase-price" step="0.01" required>
+                </div>
+                <div class="input-group">
+                    <label for="selling-price">Selling Price (₹)</label>
+                    <input type="number" id="selling-price" step="0.01" required>
+                </div>
+                <div class="input-group">
+                    <label for="expiry-date">Expiry Date (Optional)</label>
+                    <input type="date" id="expiry-date">
+                </div>
+                <button type="submit" class="btn">Save Item</button>
+            </form>
+        </div>
+    </div>
+
+
+    <script type="module" src="js/app.js?v=4"></script>
+</body>
+
+</html>
