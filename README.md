@@ -71,12 +71,10 @@ As the **Frontend Developer**, I developed the user experience and collaborated 
 * **Made digital adoption easier** for small shops.
 * **Real-world ready**: Tested with free access to verify functionality and ease of use.
 
-##future enhasments:
-*[ ] Integrate localized language support (Hindi, Telugu, etc.) for voice billing.
-
-*[ ] Add barcode scanning capabilities via mobile camera.
-
-*[ ] Implement predictive inventory ordering based on seasonal trends.
+## 🌟 Future Enhasments
+* **Integrate localized language support (Hindi, Telugu, etc.) for voice billing**.
+* **Add barcode scanning capabilities via mobile camera**.
+* **Implement predictive inventory ordering based on seasonal trends**.
 
 ## 🌍 Real-World Validation & Deployment
 SmartRetail AI is not just a prototype; it is a **fully functional system deployed on the internet** using Firebase. To ensure the platform met the actual needs of its target audience, I conducted real-world testing by granting **free access to a select group of local shopkeepers**. This phase was critical in verifying the system's multi-tenant stability and the usability of the voice-billing interface in noisy, fast-paced retail environments. The successful testing period proved that the application effectively reduces manual errors and speeds up the billing process for everyday retailers.
