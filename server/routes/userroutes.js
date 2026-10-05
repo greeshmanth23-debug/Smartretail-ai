@@ -6,7 +6,8 @@ const userRoutes = express.Router();
 
 userRoutes.post('/signup', async (req, res) => {
     const { username, shopname, email, password } = req.body;
-    const newUser = new userModel({ username, shopname, email, password });
+    const userid = new Date().getTime().toString(); 
+    const newUser = new userModel({ userid, username, shopname, email, password });
     await newUser.save()
         .then(() => {
             res.status(201).json({ message: 'success' });
